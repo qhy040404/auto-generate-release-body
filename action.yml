@@ -1,0 +1,33 @@
+name: 'Auto generate Release changelog'
+description: 'A GitHub action to generate Release changelog'
+author: 'qhy040404'
+
+inputs:
+  changelog:
+    description: 'Your changelog filepath'
+    required: true
+    default: 'Changelog.md'
+  template:
+    description: 'Your Release template filepath'
+    required: true
+    default: '.github/RELEASE_TEMPLATE.md'
+  tag:
+    description: 'Current tag name'
+    required: true
+    default: ''
+  template-data:
+    description: 'The content in template'
+    required: true
+    default: ''
+  fore-delimiter:
+    description: 'The content between the tag name and the content'
+    required: true
+    default: ''
+  back-delimiter:
+    description: 'The content between the content and the next tag name'
+    required: true
+    default: ''
+
+runs:
+  using: node16
+  main: dist/index.js
