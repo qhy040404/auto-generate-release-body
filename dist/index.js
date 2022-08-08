@@ -172,7 +172,7 @@ function run() {
         const first = yield (0, file_helper_1.splitData)(cdata, fore_delim, 1);
         core.debug(first);
         const cl = yield (0, file_helper_1.splitData)(first, back_delim, 0);
-        core.debug(cl);
+        core.info(cl);
         core.info('Replacing changelog template content');
         tdata = tdata.replace(template_data, cl);
         core.info('Writing release body');
