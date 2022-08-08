@@ -29,13 +29,13 @@ async function run() {
     const first = await splitData(cdata, fore_delim, 1)
     core.debug(first)
     const cl = await splitData(first, back_delim, 0)
-    core.info(cl)
+    core.debug(cl)
 
     core.info('Replacing changelog template content')
     tdata = tdata.replace(template_data, cl)
-    core.info('start')
+    core.warning('Final body start ---')
     core.info(tdata)
-    core.info('end')
+    core.warning('Final body end ---')
 
     core.info('Writing release body')
     try {

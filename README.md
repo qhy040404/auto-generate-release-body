@@ -14,6 +14,6 @@ This is a GitHub action to generate Release changelog.
     template: 'RELEASE_TEMPLATE.md' # Template filename
     tag: ${{ github.ref_name }} # New tag name
     template-data: 'This is an example' # Template replaceable data
-    fore-delimiter: '\n'
-    back-delimiter: '\n'
+    fore-delimiter: ':'
+    back-delimiter: 'v'
 ```

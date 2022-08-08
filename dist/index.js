@@ -92,8 +92,8 @@ function splitData(data, delimiter, position) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const dataArray = data.split(delimiter);
-            core.warning(dataArray.length.toString());
-            data = dataArray[position];
+            core.debug(dataArray.length.toString());
+            data = dataArray[position].trim();
         }
         catch (e) {
             core.error(`Split Error \n ${e}`);
@@ -172,12 +172,12 @@ function run() {
         const first = yield (0, file_helper_1.splitData)(cdata, fore_delim, 1);
         core.debug(first);
         const cl = yield (0, file_helper_1.splitData)(first, back_delim, 0);
-        core.info(cl);
+        core.debug(cl);
         core.info('Replacing changelog template content');
         tdata = tdata.replace(template_data, cl);
-        core.info('start');
+        core.warning('Final body start ---');
         core.info(tdata);
-        core.info('end');
+        core.warning('Final body end ---');
         core.info('Writing release body');
         try {
             fs.writeFileSync(template, tdata, 'utf8');

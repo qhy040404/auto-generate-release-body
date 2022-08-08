@@ -10,8 +10,8 @@ export async function findFiles(name: string): Promise<string> {
 export async function splitData(data: string, delimiter: string, position: number): Promise<string> {
     try {
         const dataArray = data.split(delimiter)
-        core.warning(dataArray.length.toString())
-        data = dataArray[position]
+        core.debug(dataArray.length.toString())
+        data = dataArray[position].trim()
     } catch (e) {
         core.error(`Split Error \n ${e}`)
         data = ""
