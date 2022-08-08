@@ -22,7 +22,7 @@ async function run() {
     const cdata = fs.readFileSync(changelog, 'utf8')
     let tdata = fs.readFileSync(template, 'utf8')
 
-    const cl = await split(await split(cdata, fore_delim, 1),back_delim,0)
+    const cl = await split(await split(cdata, fore_delim, 1), back_delim, 0)
     core.debug(cl)
 
     core.info('Replacing changelog template content')
