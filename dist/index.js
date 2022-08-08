@@ -91,8 +91,9 @@ exports.findFiles = findFiles;
 function splitData(data, delimiter, position) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            core.debug(position.toString());
-            data = data.split(delimiter)[position];
+            const dataArray = data.split(delimiter);
+            core.debug(dataArray.toString());
+            data = dataArray[position];
         }
         catch (e) {
             core.error(`Split Error \n ${e}`);
