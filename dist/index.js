@@ -168,7 +168,8 @@ function run() {
         const cdata = fs.readFileSync(changelog, 'utf8');
         let tdata = fs.readFileSync(template, 'utf8');
         core.debug(`Changelog data:\n ${cdata}`);
-        const cl = yield (0, file_helper_1.splitData)(yield (0, file_helper_1.splitData)(cdata, fore_delim, 1), back_delim, 0);
+        const first = yield (0, file_helper_1.splitData)(cdata, fore_delim, 1);
+        const cl = yield (0, file_helper_1.splitData)(first, back_delim, 0);
         core.debug(cl);
         core.info('Replacing changelog template content');
         tdata = tdata.replace(template_data, cl);
