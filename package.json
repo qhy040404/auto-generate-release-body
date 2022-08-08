@@ -2,6 +2,19 @@
   "name": "auto-generate-release-body",
   "description": "A GitHub action to generate Release changelog",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qhy040404/auto-generate-release-body.git"
+  },
+  "keywords": [
+    "release",
+    "automatic"
+  ],
+  "author": "qhy040404",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qhy040404/auto-generate-release-body/issues"
+  },
   "dependencies": {
     "@actions/core": "^1.9.0"
   }
