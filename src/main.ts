@@ -21,8 +21,8 @@ async function run() {
     const changelog = await findFiles(changelog_name)
     const template = await findFiles(template_name)
 
-    const cdata = fs.readFile(changelog,'utf8')
-    let tdata = fs.readFile(template, 'utf8')
+    const cdata = fs.readFileSync(changelog,'utf8')
+    let tdata = fs.readFileSync(template, 'utf8')
 
     core.debug(`Changelog data:\n ${cdata}`)
 
@@ -36,7 +36,7 @@ async function run() {
 
     core.info('Writing release body')
     try {
-        fs.writeFile(template, tdata, 'utf8')
+        fs.writeFileSync(template, tdata, 'utf8')
         core.info('Release body overwritten')
     } catch (e) {
         core.error(`${e}`)

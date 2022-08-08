@@ -165,8 +165,8 @@ function run() {
             core.setFailed(`${check_result} was not set`);
         const changelog = yield (0, file_helper_1.findFiles)(changelog_name);
         const template = yield (0, file_helper_1.findFiles)(template_name);
-        const cdata = fs.readFile(changelog, 'utf8');
-        let tdata = fs.readFile(template, 'utf8');
+        const cdata = fs.readFileSync(changelog, 'utf8');
+        let tdata = fs.readFileSync(template, 'utf8');
         core.debug(`Changelog data:\n ${cdata}`);
         const first = yield (0, file_helper_1.splitData)(cdata, fore_delim, 1);
         core.debug(first);
@@ -176,7 +176,7 @@ function run() {
         tdata = tdata.replace(template_data, cl);
         core.info('Writing release body');
         try {
-            fs.writeFile(template, tdata, 'utf8');
+            fs.writeFileSync(template, tdata, 'utf8');
             core.info('Release body overwritten');
         }
         catch (e) {
