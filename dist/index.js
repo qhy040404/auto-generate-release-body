@@ -92,7 +92,7 @@ function splitData(data, delimiter, position) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const dataArray = data.split(delimiter);
-            core.debug(dataArray.toString());
+            core.debug(dataArray.length.toString());
             data = dataArray[position];
         }
         catch (e) {
