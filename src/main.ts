@@ -27,6 +27,7 @@ async function run() {
     core.debug(`Changelog data:\n ${cdata}`)
 
     const first = await splitData(cdata, fore_delim, 1)
+    core.debug(first)
     const cl = await splitData(first, back_delim, 0)
     core.debug(cl)
 
