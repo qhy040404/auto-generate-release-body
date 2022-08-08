@@ -1,6 +1,6 @@
 import * as core from '@actions/core'
 import {checkInputs} from './check-inputs'
-import {findFiles, split} from "./file-helper";
+import {findFiles, splitData} from "./file-helper";
 import * as fs from 'fs'
 
 async function run() {
@@ -26,7 +26,7 @@ async function run() {
 
     core.debug(`Changelog data:\n ${cdata}`)
 
-    const cl = await split(await split(cdata, fore_delim, 1), back_delim, 0)
+    const cl = await splitData(await splitData(cdata, fore_delim, 1), back_delim, 0)
     core.debug(cl)
 
     core.info('Replacing changelog template content')

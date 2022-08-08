@@ -77,7 +77,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.split = exports.findFiles = void 0;
+exports.splitData = exports.findFiles = void 0;
 const glob = __importStar(__nccwpck_require__(760));
 const core = __importStar(__nccwpck_require__(578));
 function findFiles(name) {
@@ -88,9 +88,10 @@ function findFiles(name) {
     });
 }
 exports.findFiles = findFiles;
-function split(data, delimiter, position) {
+function splitData(data, delimiter, position) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            core.debug(position.toString());
             data = data.split(delimiter)[position];
         }
         catch (e) {
@@ -100,7 +101,7 @@ function split(data, delimiter, position) {
         return data;
     });
 }
-exports.split = split;
+exports.splitData = splitData;
 
 
 /***/ }),
@@ -167,7 +168,7 @@ function run() {
         const cdata = fs.readFileSync(changelog, 'utf8');
         let tdata = fs.readFileSync(template, 'utf8');
         core.debug(`Changelog data:\n ${cdata}`);
-        const cl = yield (0, file_helper_1.split)(yield (0, file_helper_1.split)(cdata, fore_delim, 1), back_delim, 0);
+        const cl = yield (0, file_helper_1.splitData)(yield (0, file_helper_1.splitData)(cdata, fore_delim, 1), back_delim, 0);
         core.debug(cl);
         core.info('Replacing changelog template content');
         tdata = tdata.replace(template_data, cl);

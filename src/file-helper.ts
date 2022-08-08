@@ -7,8 +7,9 @@ export async function findFiles(name: string): Promise<string> {
     return files[0]
 }
 
-export async function split(data: string, delimiter: string, position: number): Promise<string> {
+export async function splitData(data: string, delimiter: string, position: number): Promise<string> {
     try {
+        core.debug(position.toString())
         data = data.split(delimiter)[position]
     } catch (e) {
         core.error(`Split Error \n ${e}`)
