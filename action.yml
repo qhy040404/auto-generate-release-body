@@ -10,7 +10,7 @@ inputs:
   template:
     description: 'Your Release template name'
     required: true
-    default: '.github/RELEASE_TEMPLATE.md'
+    default: 'RELEASE_TEMPLATE.md'
   tag:
     description: 'Current tag name'
     required: true
