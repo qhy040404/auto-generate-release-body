@@ -4,11 +4,11 @@ author: 'qhy040404'
 
 inputs:
   changelog:
-    description: 'Your changelog filepath'
+    description: 'Your changelog name'
     required: true
     default: 'Changelog.md'
   template:
-    description: 'Your Release template filepath'
+    description: 'Your Release template name'
     required: true
     default: '.github/RELEASE_TEMPLATE.md'
   tag:
@@ -16,7 +16,7 @@ inputs:
     required: true
     default: ''
   template-data:
-    description: 'The content in template'
+    description: 'The replaceable content in template'
     required: true
     default: ''
   fore-delimiter:
