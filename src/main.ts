@@ -12,6 +12,8 @@ async function run() {
     const fore_delim = core.getInput('fore-delimiter', {required: true})
     const back_delim = core.getInput('back-delimiter', {required: true})
 
+    core.debug(`${changelog_name}\n${template_name}\n${tag_name}\n${template_data}\n${fore_delim}\n${back_delim}`)
+
     const check_result = await checkInputs(changelog_name, template_name, tag_name, template_data, fore_delim, back_delim)
     if (check_result == "Nice") core.info('Everything imported')
     else core.setFailed(`${check_result} was not set`)
