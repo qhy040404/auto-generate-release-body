@@ -33,6 +33,9 @@ async function run() {
 
     core.info('Replacing changelog template content')
     tdata = tdata.replace(template_data, cl)
+    core.info('start')
+    core.info(tdata)
+    core.info('end')
 
     core.info('Writing release body')
     try {
