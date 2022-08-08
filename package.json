@@ -1,7 +1,7 @@
 {
   "name": "auto-generate-release-body",
   "description": "A GitHub action to generate Release changelog",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qhy040404/auto-generate-release-body.git"
