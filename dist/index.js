@@ -176,7 +176,7 @@ function run() {
         core.info('Replacing changelog template content');
         tdata = tdata.replace(template_data, cl);
         core.warning('Final body start ---');
-        core.info(tdata);
+        core.notice(tdata);
         core.warning('Final body end ---');
         core.info('Writing release body');
         try {
